@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ubah Angka Romawi ke Angka Biasa</h1>
+    <button id="ubah1">Ubah</button>
+    <input id="id1" type="text"></input>
+    <p id="hasil1"></p>
+    <h2></h2>
+    <script>
+        var wut = document.getElementById("id1").value;
+        var id1 = wut.toString();
+        function ubah1(id1) { 
+            if(id1 == null) return -1;
+                var num = char1(id1.charAt(0));
+                var pre, curr;
+    
+            for(var i = 1; i < id1.length; i++){
+                curr = char1(id1.charAt(i));
+                pre = char1(id1.charAt(i-1));
+            if(curr <= pre){
+                num += curr;
+            } else {
+                num = num - pre*2 + curr;
+                }
+            }
+            return num;
+        }
+    
+        function char1(c){
+            switch (c){
+                case 'I': return 1;
+                case 'V': return 5;
+                case 'X': return 10;
+                case 'L': return 50;
+                case 'C': return 100;
+                case 'D': return 500;
+                case 'M': return 1000;
+                default: return -1;
+            }
+        }
+        document.getElementById("hasil1").innerHTML = num
+    // console.log(roman_to_Int('XVI'));
+    // console.log(roman_to_Int('CI'));
+    </script>
+</body>
+</html>
